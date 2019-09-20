@@ -1,0 +1,20 @@
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-sm">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Author</th>
+            <th>Content</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for comments in value %}
+            <tr>
+                <td>{{ comments.id }}</td>
+                <td>{{ comments.author }}</td>
+                <td>{{ comments.content }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

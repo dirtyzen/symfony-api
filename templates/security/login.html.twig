@@ -1,0 +1,38 @@
+{% extends easyadmin_config('design.templates.layout') %}
+
+{% block body_class 'page-login' %}
+
+{% block wrapper_wrapper %}
+
+    <div class="login-wrapper">
+        <section class="content">
+            <form method="post" action="{{ path('security_login') }}">
+
+                <div class="form-group field-text">
+                    <label for="username" class="sr-only form-control-label required">test</label>
+                    <div class="form-widget form-widget-with-icon">
+                        <i class="fa fa-fw fa-user"></i>
+                        <input type="text" id="username" name="_username" class="form-control" placeholder="" value="" required autofocus>
+                    </div>
+                </div>
+
+                <div class="form-group field-password">
+                    <label for="password" class="sr-only form-control-label required"></label>
+                    <div class="form-widget form-widget-with-icon">
+                        <i class="fa fa-fw fa-lock"></i>
+                        <input type="password" id="password" name="_password" class="form-control" placeholder="" required>
+                    </div>
+                </div>
+
+                <div class="form-group field-button">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Giriş</button>
+                </div>
+
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <input type="hidden" name="_target_path" value="{{ app.request.get('redirect_to') }}">
+
+            </form>
+        </section>
+    </div>
+
+{% endblock %}

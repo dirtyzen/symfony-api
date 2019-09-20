@@ -1,0 +1,5 @@
+<h3>Merhaba {{ user.getName() }}</h3>
+
+<p>Başarıyla üye oldunuz. Son bir adım kaldı.</p>
+
+<p>Lütfen <a href="{{ url('default_confirm_user', {'token': user.getConfirmationToken() }) }}">buraya</a> tıklayarak hesabınızı doğrulayınız.</p>
