@@ -108,7 +108,7 @@ class BlogPost implements AuthoredEntityInterface, PublishedDateEntityInterface
      * @ORM\Column(type="text")
      * @Assert\NotBlank(message="İçeriği boş bıraktınız.")
      * @Assert\Length(min="3", minMessage="İçerik en az 3 karakterli olmalı.")
-     * @Groups({"post"})
+     * @Groups({"post", "get-blog-post-with-author"})
      */
     private $content;
 

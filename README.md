@@ -1,2 +1,2 @@
 # symfony-api
-Symfony Restfull API Test
+Symfony Restful API Test
