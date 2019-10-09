@@ -23,6 +23,7 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
     App\Serializer\UserContextBuilder:
@@ -37,3 +38,7 @@ services:
     App\Security\UserConfirmationService:
         arguments:
             $logger: '@monolog.logger.token_confirmation'
+
+    App\EventListener\AuthenticationSuccessListener:
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_authentication_success, method: onAuthenticationSuccessResponse }
